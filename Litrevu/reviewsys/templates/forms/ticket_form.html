@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="w-50 mx-auto">
+    <h2>Créer un nouveau ticket</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Envoyer" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" class="d-flex flex-column">
+    {% csrf_token %}
+    <div class="w-50 mx-auto">
+        {{ formTicket.as_p }}
+    </div>
+    <div class="w-50 mx-auto">
+        {{ formReview.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary mx-auto">Envoyer</button>
+</form>
+{% endblock content %}

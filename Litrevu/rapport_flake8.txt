@@ -1,0 +1,5 @@
+./Litrevu/settings.py:104:91: E501 line too long (91 > 90 characters)
+./authentication/authentication/settings.py:89:91: E501 line too long (91 > 90 characters)
+./authentication/migrations/0001_initial.py:57:91: E501 line too long (134 > 90 characters)
+./reviewsys/admin.py:1:1: F401 'django.contrib.admin' imported but unused
+./reviewsys/tests.py:1:1: F401 'django.test.TestCase' imported but unused

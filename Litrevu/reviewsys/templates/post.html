@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for post in posts %}
+    {% if post.content_types == 'TICKET' %}
+    {% include 'Snippet/ticket_snippet.html' %}    
+    {% elif post.content_types == 'REVIEW' %}
+    {% include 'Snippet/review_snippet.html' %}
+    {% endif %}
+{% endfor %}
+{% endblock %}

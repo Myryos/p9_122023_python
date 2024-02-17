@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ user }}</h1>
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'new_ticket' %}" class="m-5"><button class="btn btn-secondary">Créer un ticket</button></a>
+        <a href="{% url 'new_ticket_review' %}" class="m-5"><button class="btn btn-secondary">Creer un ticket et une review</button></a>
+    </div>
+    <div class="border m-1 d-flex flex-column  col-md-3 mx-auto">
+    {% for post in posts %}
+        {% if post.content_types == 'TICKET' %}
+        {% include 'Snippet/ticket_snippet_flow.html' %}    
+        {% elif post.content_types == 'REVIEW' %}
+        {% include 'Snippet/review_snippet_flow.html' %}
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}

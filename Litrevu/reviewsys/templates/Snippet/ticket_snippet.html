@@ -1,0 +1,26 @@
+{% load static %}
+{% block content %}
+<div class="ticket card m-2" data-id="{{ post.id }}">
+    <div class="card-body">
+        <div class="card-header m-0 p-0 d-flex justify-content-end">
+        <p class="m-0">{{ post.time_created }}</p>
+        </div>
+        <p>{{ post.user }} a demander une critique</p>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        {% if post.image %}
+            <img src="{% static post.image.url %}" class="img-fluid"/>
+        {% endif %}
+        <div class="d-flex justify-content-end">
+            {% if post.user.id == user.id %}
+                <a href="{% url 'update_ticket' post.id %}"><button class="btn btn-primary p-1 me-1">Mettre a jour le ticket</button></a>
+            {% endif %}
+            {% if not post.review %}
+                <a class="new_review" href="{% url 'new_review' post.id%}"><button class="btn btn-primary p-1 ms-1">Créer une review</button></a>
+            {% endif %}
+            <a href="{% url 'delete_ticket' post.id%}"><button class="btn btn-primary p-1 ms-1">Supprimer le ticket</button></a>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

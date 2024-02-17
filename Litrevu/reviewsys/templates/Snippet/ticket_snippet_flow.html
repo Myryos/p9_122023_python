@@ -1,0 +1,16 @@
+{% load static %}
+{% block content %}
+<div class="ticket card m-2">
+    <div class="card-body">
+        <div class="card-header m-0 p-0 d-flex justify-content-end">
+        <p class="m-0">{{ post.time_created }}</p>
+        </div>
+        <p>{{ post.user }} a demander une critique</p>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        {% if post.image %}
+            <img src="{% static post.image.url %}" class="img-fluid"/>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
