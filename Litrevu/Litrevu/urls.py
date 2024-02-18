@@ -16,6 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from django.views.generic.base import RedirectView
 
 
 import authentication.views
@@ -24,6 +25,7 @@ import reviewsys.views
 
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='home/', permanent=True)),
     path("admin/", admin.site.urls),
     path("login/", authentication.views.login_page, name="login"),
     path("signup/", authentication.views.signup, name="signup"),

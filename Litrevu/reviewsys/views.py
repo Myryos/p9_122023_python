@@ -28,10 +28,10 @@ from django.core.exceptions import ValidationError
 def flow(request):
     user = request.user
 
-    reviews = get_users_viewable_reviews(user)
+    reviews = Review.objects.all()
     reviews = reviews.annotate(content_types=Value("REVIEW", CharField()))
 
-    tickets = get_users_viewable_tickets(user)
+    tickets = Ticket.objects.all()
     tickets = tickets.annotate(content_types=Value("TICKET", CharField()))
 
     for review in reviews:
