@@ -1,0 +1,10 @@
+venv
+
+models+(1)(1).py
+
+**/*.log
+**/*.pot
+**/*.pyc
+__pycache__
+**/*.sqlite3
+**/media

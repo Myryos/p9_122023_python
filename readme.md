@@ -50,3 +50,12 @@
     ```
     python manage.py runserver
     ```
+
+7. **Créer les Tables selon les Models**
+    ```
+    python manage.py makemigrations
+    ```
+
+    ```
+    python manage.py migrate
+    ``
