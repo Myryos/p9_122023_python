@@ -14,12 +14,8 @@
         <div class="d-flex justify-content-end">
             {% if post.user.id == user.id %}
                 <a href="{% url 'update_ticket' post.id %}"><button class="btn btn-primary p-1 me-1">Mettre a jour le ticket</button></a>
-            {% endif %}
-            {% if not post.review %}
-                <a class="new_review" href="{% url 'new_review' post.id%}"><button class="btn btn-primary p-1 ms-1">Créer une review</button></a>
-            {% endif %}
-            <a href="{% url 'delete_ticket' post.id%}"><button class="btn btn-primary p-1 ms-1">Supprimer le ticket</button></a>
-            
+                <a href="{% url 'delete_ticket' post.id%}"><button class="btn btn-primary p-1 ms-1">Supprimer le ticket</button></a>
+            {% endif %}            
         </div>
     </div>
 </div>

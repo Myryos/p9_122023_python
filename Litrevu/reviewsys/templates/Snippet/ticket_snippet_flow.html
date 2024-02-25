@@ -11,6 +11,11 @@
         {% if post.image %}
             <img src="{% static post.image.url %}" class="img-fluid"/>
         {% endif %}
+        {% if not post.review %}
+            <div class="p-1 w-100 d-flex justify-content-end">
+                <a class="new_review" href="{% url 'new_review' post.id%}"><button class="btn btn-primary p-1 ms-1">Créer une review</button></a>
+            </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

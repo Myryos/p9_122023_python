@@ -72,7 +72,6 @@ def ticket_create(request):
         form = TicketForm(request.POST, request.FILES)
         if form.is_valid():
             ticket = form.save(commit=False)
-
             ticket.user = request.user
             ticket.save()
             return redirect("home")
